@@ -1,0 +1,9 @@
+let fristname = "ชัยสิทธิ์"
+let age = "20"
+let mager = "วิศวกรรมคอมพิวเตอร์"
+console.log("ชื่อ :" , fristname)
+console.log("อายุ :" , age) 
+console.log("สาขา :" , mager) 
+
+// fristname คือ ชื่อ , age คืออายุ , mager คือ สาขา 
+// ใช้ let ในการตั้งตัวแปล ชื่อ อายุ และ สาขา และ console.log เพื่อ แสดงผลลัพท์ตัวแปล ทั้ง ชื่อ อายุ และ สาขา ให้แสดงใน TERMINEL
