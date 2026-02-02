@@ -24,7 +24,7 @@ const fetchDataFromServer3 = () => {
 
 console.log("Fetching data from servers...");
 
-Promise.race([
+Promise.any([
     fetchDataFromServer1(),
     fetchDataFromServer2(),
     fetchDataFromServer3()
