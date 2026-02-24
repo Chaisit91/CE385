@@ -35,6 +35,22 @@ app.get('/users', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch users' })
   }
 })
+// UPDATE USER
+app.put('/users/:id', async (req, res) => {
+  const { id } = req.params
+  const { name, email } = req.body
+
+  try {
+    const user = await prisma.user.update({
+      where: { Userid: id }, 
+      data: { name, email }
+    })
+
+    res.json(user)
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update user' })
+  }
+})
 
 // GET USER BY EMAIL 
 app.get('/users/email/:email', async (req, res) => {
@@ -55,22 +71,7 @@ app.get('/users/email/:email', async (req, res) => {
   }
 })
 
-// UPDATE USER
-app.put('/users/:id', async (req, res) => {
-  const { id } = req.params
-  const { name, email } = req.body
 
-  try {
-    const user = await prisma.user.update({
-      where: { Userid: id }, 
-      data: { name, email }
-    })
-
-    res.json(user)
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to update user' })
-  }
-})
 
 // DELETE USER
 app.delete('/users/:id', async (req, res) => {
